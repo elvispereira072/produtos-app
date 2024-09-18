@@ -625,6 +625,69 @@
             /* Alteração ao passar o mouse */
             transform: scale(1.05);
         }
+
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 160px;
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(5, 5, 5, 0.089);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 20px;
+            margin: auto;
+            /* Centraliza e adiciona margem automática em torno do container */
+        }
+
+        .clock {
+            font-size: 2em;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+        }
+
+        .date {
+            font-size: 1em;
+            margin-top: 10px;
+            color: white;
+        }
+
+        /* Media queries para responsividade */
+        @media (max-width: 768px) {
+            .clock-container {
+                width: 90%;
+                /* Mantém a largura em proporção */
+                height: auto;
+            }
+
+            .clock {
+                font-size: 1.5em;
+            }
+
+            .date {
+                font-size: 0.875em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clock-container {
+                width: 90%;
+                /* Mantém a largura em proporção */
+                height: auto;
+            }
+
+            .clock {
+                font-size: 1.25em;
+            }
+
+            .date {
+                font-size: 0.75em;
+            }
+        }
     </style>
 </head>
 
@@ -677,6 +740,14 @@
         </section>
         <br>
 
+        <div class="clock-container">
+            <div id="clock" class="clock"></div>
+            <div id="date" class="date"></div>
+        </div>
+        <br>
+        <br>
+
+
         <section id="products">
             <div class="product">
                 <p>Product</p>
@@ -689,7 +760,7 @@
             </div>
             <br>
             <br>
-        
+
             <div class="product">
                 <p>Product</p>
                 <img src="assets/guitar.jpg" alt="Bebida3">
@@ -701,7 +772,7 @@
             </div>
             <br>
             <br>
-        
+
             <div class="product">
                 <p>Product</p>
                 <img src="assets/contrabaixo.jpg" alt="Bebida4">
@@ -713,7 +784,7 @@
             </div>
             <br>
             <br>
-        
+
             <div class="product">
                 <p>Product</p>
                 <img src="assets/violao.jpg" alt="Lanche3">
@@ -725,7 +796,7 @@
             </div>
             <br>
             <br>
-        
+
             <div class="product">
                 <p>Product</p>
                 <img src="assets/drums.jpg" alt="Lanche2">
@@ -737,7 +808,7 @@
             </div>
             <br>
             <br>
-        
+
             <div class="product">
                 <p>Product</p>
                 <img src="assets/saxofone.jpg" alt="Bebida4">
@@ -750,390 +821,415 @@
             <br>
             <br>
         </section>
-        
 
-            <form action="https://api.staticforms.xyz/submit" method="post">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <form action="https://api.staticforms.xyz/submit" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                <label for="phone">Your Phone:</label>
-                <input type="text" id="phone" name="phone" placeholder="Your Phone">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-                <label for="company">Your Company:</label>
-                <input type="text" id="company" name="company" placeholder="Your Company">
+            <label for="phone">Your Phone:</label>
+            <input type="text" id="phone" name="phone" placeholder="Your Phone">
 
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <label for="company">Your Company:</label>
+            <input type="text" id="company" name="company" placeholder="Your Company">
 
-                <input type="text" name="honeypot" style="display:none">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-                <input type="hidden" name="accessKey" value="11d0b5ed-df07-4c34-ad75-45ea3e034c56">
-                <input type="hidden" name="subject" value="Contact Form Submission">
-                <input type="hidden" name="replyTo" value="@">
-                <input type="hidden" name="redirectTo" value="https://produtos-app.vercel.app">
+            <input type="text" name="honeypot" style="display:none">
 
-                <input type="submit" value="Submit">
-            </form>
-            <br>
-            <br>
+            <input type="hidden" name="accessKey" value="11d0b5ed-df07-4c34-ad75-45ea3e034c56">
+            <input type="hidden" name="subject" value="Contact Form Submission">
+            <input type="hidden" name="replyTo" value="@">
+            <input type="hidden" name="redirectTo" value="https://produtos-app.vercel.app">
 
-            <section id="Location">
-                <p>Nossa Localização</p>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15011.292141156985!2d-122.0843372!3d37.4223663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085806ae88fb55d%3A0xf8df5647f047ee56!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1614354140015!5m2!1sen!2sus"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </section>
-            <br>
-            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <br>
 
-            <section id="testimonials">
-                <p>Testimonials</p>
-                <div class="testimonial">
-                    <p><em>— João S., Guitar Enthusiast</em></p>
-                    <p>"The guitar selection here is fantastic! The staff helped me find the perfect model, and I
-                        couldn't be happier with the quality."</p>
-                </div>
+        <section id="Location">
+            <p>Nossa Localização</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15011.292141156985!2d-122.0843372!3d37.4223663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085806ae88fb55d%3A0xf8df5647f047ee56!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1614354140015!5m2!1sen!2sus"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+        <br>
+        <br>
 
-                <div class="testimonial">
-                    <p><em>— Maria P., Piano Lover</em></p>
-                    <p>"I bought my first piano here and the experience was wonderful. The team was very knowledgeable
-                        and guided me through the entire process."</p>
-                </div>
-
-                <div class="testimonial">
-                    <p><em>— André M., Drum Fanatic</em></p>
-                    <p>"The drum sets at this store are top-notch. The staff's expertise really made a difference in
-                        choosing the right kit for me."</p>
-                </div>
-
-                <div class="testimonial">
-                    <p><em>— Laura T., Violinist</em></p>
-                    <p>"Finding a quality violin can be challenging, but the selection and service at Music Store
-                        Harmony made it easy. Highly recommended!"</p>
-                </div>
-
-                <div class="testimonial">
-                    <p><em>— Lucas R., Music Teacher</em></p>
-                    <p>"As a music teacher, I always recommend Music Store Harmony to my students. They offer great
-                        instruments and excellent customer service."</p>
-                </div>
-
-                <div class="testimonial">
-                    <p><em>— Sofia L., Music Producer</em></p>
-                    <p>"The selection of recording equipment and accessories is impressive. This store is a
-                        one-stop-shop for all my studio needs."</p>
-                </div>
-
-                <div class="testimonial">
-                    <p><em>— Pedro C., Bass Guitarist</em></p>
-                    <p>"I've purchased several bass guitars here, and each experience has been exceptional. The variety
-                        and quality are unmatched."</p>
-                </div>
-            </section>
-            <br>
-
-            <div class="rating">
-                <input type="radio" id="star9" name="rating" value="9">
-                <label for="star9">&#9733;</label>
-                <input type="radio" id="star8" name="rating" value="8">
-                <label for="star8">&#9733;</label>
-                <input type="radio" id="star7" name="rating" value="7">
-                <label for="star7">&#9733;</label>
-                <input type="radio" id="star6" name="rating" value="6">
-                <label for="star6">&#9733;</label>
-                <input type="radio" id="star5" name="rating" value="5">
-                <label for="star5">&#9733;</label>
-                <input type="radio" id="star9" name="rating" value="9">
-                <label for="star9">&#9733;</label>
-                <input type="radio" id="star8" name="rating" value="8">
-                <label for="star8">&#9733;</label>
-                <input type="radio" id="star7" name="rating" value="7">
-                <label for="star7">&#9733;</label>
-                <input type="radio" id="star6" name="rating" value="6">
-                <label for="star6">&#9733;</label>
-                <input type="radio" id="star5" name="rating" value="5">
-                <label for="star5">&#9733;</label>
+        <section id="testimonials">
+            <p>Testimonials</p>
+            <div class="testimonial">
+                <p><em>— João S., Guitar Enthusiast</em></p>
+                <p>"The guitar selection here is fantastic! The staff helped me find the perfect model, and I
+                    couldn't be happier with the quality."</p>
             </div>
+
+            <div class="testimonial">
+                <p><em>— Maria P., Piano Lover</em></p>
+                <p>"I bought my first piano here and the experience was wonderful. The team was very knowledgeable
+                    and guided me through the entire process."</p>
+            </div>
+
+            <div class="testimonial">
+                <p><em>— André M., Drum Fanatic</em></p>
+                <p>"The drum sets at this store are top-notch. The staff's expertise really made a difference in
+                    choosing the right kit for me."</p>
+            </div>
+
+            <div class="testimonial">
+                <p><em>— Laura T., Violinist</em></p>
+                <p>"Finding a quality violin can be challenging, but the selection and service at Music Store
+                    Harmony made it easy. Highly recommended!"</p>
+            </div>
+
+            <div class="testimonial">
+                <p><em>— Lucas R., Music Teacher</em></p>
+                <p>"As a music teacher, I always recommend Music Store Harmony to my students. They offer great
+                    instruments and excellent customer service."</p>
+            </div>
+
+            <div class="testimonial">
+                <p><em>— Sofia L., Music Producer</em></p>
+                <p>"The selection of recording equipment and accessories is impressive. This store is a
+                    one-stop-shop for all my studio needs."</p>
+            </div>
+
+            <div class="testimonial">
+                <p><em>— Pedro C., Bass Guitarist</em></p>
+                <p>"I've purchased several bass guitars here, and each experience has been exceptional. The variety
+                    and quality are unmatched."</p>
+            </div>
+        </section>
+        <br>
+
+        <div class="rating">
+            <input type="radio" id="star9" name="rating" value="9">
+            <label for="star9">&#9733;</label>
+            <input type="radio" id="star8" name="rating" value="8">
+            <label for="star8">&#9733;</label>
+            <input type="radio" id="star7" name="rating" value="7">
+            <label for="star7">&#9733;</label>
+            <input type="radio" id="star6" name="rating" value="6">
+            <label for="star6">&#9733;</label>
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">&#9733;</label>
+            <input type="radio" id="star9" name="rating" value="9">
+            <label for="star9">&#9733;</label>
+            <input type="radio" id="star8" name="rating" value="8">
+            <label for="star8">&#9733;</label>
+            <input type="radio" id="star7" name="rating" value="7">
+            <label for="star7">&#9733;</label>
+            <input type="radio" id="star6" name="rating" value="6">
+            <label for="star6">&#9733;</label>
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">&#9733;</label>
+        </div>
+        <br>
+
+        <section id="owner">
+            <br>
+            <p>Store Owner:</p>
+
+            <p>João Silva, founder and owner of Harmonia Musical, is an experienced and enthusiastic musician with
+                more than 20 years of career in the world of music. João brought his passion and knowledge to create
+                a store that serves both beginners and professional musicians. His vision is to provide a space
+                where everyone can find instruments and accessories needed to express their musical creativity.
+                <br>
+                João believes that music transforms lives and is always available to offer advice and share his
+                experiences with customers.
+            </p>
+            <br>
+        </section>
+        <br>
+
+        <section id="jobs">
+            <br>
+            <p>Job vacancies:</p>
+            <p>We are always looking for talented people who are passionate about music to join our team at Harmonia
+                Musical. We offer a dynamic and welcoming work environment where you can grow professionally and
+                share your love of music. Check out our available job openings:</p>
             <br>
 
-            <section id="owner">
+            <ul>
+                <li><strong>Sales Consultant:</strong> Looking for someone with customer service skills and
+                    knowledge of musical instruments. Responsible for helping customers find the right products and
+                    offer technical support.</li>
                 <br>
-                <p>Store Owner:</p>
 
-                <p>João Silva, founder and owner of Harmonia Musical, is an experienced and enthusiastic musician with
-                    more than 20 years of career in the world of music. João brought his passion and knowledge to create
-                    a store that serves both beginners and professional musicians. His vision is to provide a space
-                    where everyone can find instruments and accessories needed to express their musical creativity.
-                    <br>
-                    João believes that music transforms lives and is always available to offer advice and share his
-                    experiences with customers.
+                <li><strong>Maintenance Technician:</strong> Professional with experience in repairs and maintenance
+                    of musical instruments. Ability to diagnose and resolve technical problems efficiently.</li>
+                <br>
+
+                <li><strong>Music Teacher:</strong> Experienced musician to teach various instruments. Must have
+                    patience, communication skills and passion for teaching.</li>
+            </ul>
+            <br>
+
+            <p>If you are interested in applying for one of the vacancies, please contact us by sending a CV in PDF.
+                Join us and be part of a team dedicated to spreading the word
+                joy of music.</p>
+            <br>
+        </section>
+        <br>
+        <!-- News Section -->
+        <section id="news">
+            <br>
+            <p>News</p>
+            <p>Stay up to date with the latest musical instrument news, product launches, industry trends and local
+                events.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Services Section -->
+        <section id="services">
+            <br>
+            <p>Services</p>
+            <p>Discover our specialized services, such as tuning, repairs, instrument customization and consultancy
+                to choose the ideal instrument.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Careers Section -->
+        <section id="careers">
+            <br>
+            <p>Careers</p>
+            <p>Come and be part of our team! Check out available positions and information on how to apply to work
+                with us.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Classes Section -->
+        <section id="lessons">
+            <br>
+            <p>Classes</p>
+            <p>Explore our music lesson options, including individual and group lessons, for all levels and musical
+                styles.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Repair Section -->
+        <section id="repair">
+            <br>
+            <p>Repairs</p>
+            <p>We offer professional repair services to keep your instruments in perfect working condition.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Event Calendar -->
+        <section id="events-calendar">
+            <br>
+            <p>Events Calendar</p>
+            <p>Check out our updated calendar of musical events, workshops, special classes and other music-related
+                activities.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Instrument Rental Section -->
+        <section id="rentals">
+            <br>
+            <p>Instrument Rental</hp>
+            <p>Explore our musical instrument rental options for events, recording or experimentation before
+                purchasing.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Store Policy -->
+        <section id="politics">
+            <br>
+            <p>Store Policy</p>
+            <p>Learn about our sales, warranty, exchange and return policies to ensure a transparent and
+                satisfactory purchasing experience.</p>
+            <br>
+        </section>
+        <br>
+
+        <!-- Partnerships Section -->
+        <section id="partnerships">
+            <br>
+            <p>Partnerships</p>
+            <p>We are open to partnerships with music schools, local artists and companies in the sector. Learn more
+                about collaboration opportunities.</p>
+            <br>
+        </section>
+        <br>
+
+        <section id="special-offers" class="info">
+            <p>Ofertas Especiais</p>
+            <div class="offer-item">
+                <p>Special Weekend: 20% Discount</p>
+                <p>Enjoy a 20% discount on all orders placed during weekends. Don't miss this limited time offer.
                 </p>
                 <br>
-            </section>
+            </div>
+            <br>
             <br>
 
-            <section id="jobs">
-                <br>
-                <p>Job vacancies:</p>
-                <p>We are always looking for talented people who are passionate about music to join our team at Harmonia
-                    Musical. We offer a dynamic and welcoming work environment where you can grow professionally and
-                    share your love of music. Check out our available job openings:</p>
-                <br>
-
-                <ul>
-                    <li><strong>Sales Consultant:</strong> Looking for someone with customer service skills and
-                        knowledge of musical instruments. Responsible for helping customers find the right products and
-                        offer technical support.</li>
-                    <br>
-
-                    <li><strong>Maintenance Technician:</strong> Professional with experience in repairs and maintenance
-                        of musical instruments. Ability to diagnose and resolve technical problems efficiently.</li>
-                    <br>
-
-                    <li><strong>Music Teacher:</strong> Experienced musician to teach various instruments. Must have
-                        patience, communication skills and passion for teaching.</li>
-                </ul>
-                <br>
-
-                <p>If you are interested in applying for one of the vacancies, please contact us by sending a CV in PDF.
-                    Join us and be part of a team dedicated to spreading the word
-                    joy of music.</p>
-                <br>
-            </section>
+            <div class="offer-item">
+                <h3>Special Offer: Guitar + Lessons</h3>
+                <p>Purchase a guitar and get three free lessons for just R$500.00. Perfect for aspiring musicians.
+                </p>
+            </div>
             <br>
-            <!-- News Section -->
-            <section id="news">
-                <br>
-                <p>News</p>
-                <p>Stay up to date with the latest musical instrument news, product launches, industry trends and local
-                    events.</p>
-                <br>
-            </section>
             <br>
 
-            <!-- Services Section -->
-            <section id="services">
-                <br>
-                <p>Services</p>
-                <p>Discover our specialized services, such as tuning, repairs, instrument customization and consultancy
-                    to choose the ideal instrument.</p>
-                    <br>
-            </section>
+            <div class="offer-item">
+                <p>Happy Hour: Buy One, Get Two</p>
+                <p>Join happy hour every weekday from 5pm to 7pm and take advantage of the buy one, tier two offer
+                    on select items.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <p>FAQ (Perguntas Frequentes)</p>
+            <div class="faq-item">
+                <h3>What are your delivery hours?</h3>
+                <p>We deliver from 11:00 AM to 10:00 PM, Monday through Sunday.</p>
+            </div>
+            <br>
             <br>
 
-            <!-- Careers Section -->
-            <section id="careers">
-                <br>
-                <p>Careers</p>
-                <p>Come and be part of our team! Check out available positions and information on how to apply to work
-                    with us.</p>
-                <br>
-            </section>
+            <div class="faq-item">
+                <p>What is your delivery radius?</p>
+                <p>We deliver within a 5 km radius from our location.</p>
+            </div>
+            <br>
             <br>
 
-            <!-- Classes Section -->
-            <section id="lessons">
-                <br>
-                <p>Classes</p>
-                <p>Explore our music lesson options, including individual and group lessons, for all levels and musical
-                    styles.</p>
-                    <br>
-                </section>
-                <br>
-
-            <!-- Repair Section -->
-            <section id="repair">
-                <br>
-                <p>Repairs</p>
-                <p>We offer professional repair services to keep your instruments in perfect working condition.</p>
-                <br>
-            </section>
+            <div class="faq-item">
+                <p>Do you offer vegetarian options?</p>
+                <p>Yes, we have a variety of vegetarian options available on our menu.</p>
+            </div>
+            <br>
             <br>
 
-            <!-- Event Calendar -->
-            <section id="events-calendar">
-                <br>
-                <p>Events Calendar</p>
-                <p>Check out our updated calendar of musical events, workshops, special classes and other music-related
-                    activities.</p>
-                    <br>
-            </section>
+            <div class="faq-item">
+                <p>How can I place an order?</p>
+                <p>You can place an order by clicking on the "Comprar Agora" button next to each product or by
+                    contacting us via WhatsApp at
+                    <a
+                        href="https://api.whatsapp.com/send?phone=(13) 98143-0940&text=Olá! Gostaria de fazer um pedido.">(13)
+                        98143-0940</a>
+                </p>
+            </div>
+            <br>
             <br>
 
-            <!-- Instrument Rental Section -->
-            <section id="rentals">
-                <br>
-                <p>Instrument Rental</hp>
-                <p>Explore our musical instrument rental options for events, recording or experimentation before
-                    purchasing.</p>
-                    <br>
-            </section>
-            <br>
+            <div class="faq-item">
+                <p>Do you cater for events?</p>
+                <p>Yes, we provide catering services for events. Please contact us to discuss your event and menu
+                    options.</p>
+            </div>
+        </section>
+        <br>
+        <br>
 
-            <!-- Store Policy -->
-            <section id="politics">
-                <br>
-                <p>Store Policy</p>
-                <p>Learn about our sales, warranty, exchange and return policies to ensure a transparent and
-                    satisfactory purchasing experience.</p>
-                    <br>
-            </section>
-            <br>
+        <section id="contact" class="info">
+            <p>Contact Us:</p>
+            <div class="contact-item">
+                <p>WhatsApp: <a href="tel:(13) 98143-0940">(13) 98143-0940</a></p>
+            </div>
+        </section>
+        <br>
+        <br>
 
-            <!-- Partnerships Section -->
-            <section id="partnerships">
-                <br>
-                <p>Partnerships</p>
-                <p>We are open to partnerships with music schools, local artists and companies in the sector. Learn more
-                    about collaboration opportunities.</p>
-                    <br>
-            </section>
-            <br>
+        <footer>
 
-            <section id="special-offers" class="info">
-                <p>Ofertas Especiais</p>
-                <div class="offer-item">
-                    <p>Special Weekend: 20% Discount</p>
-                    <p>Enjoy a 20% discount on all orders placed during weekends. Don't miss this limited time offer.
-                    </p>
+            <div class="footer-content">
+                <div class="footer-item">
+                    <p>Opening Hours</p>
+                    <p>Monday - Sunday: 11:00 AM - 10:00 PM</p>
                     <br>
                 </div>
-                <br>
-                <br>
 
-                <div class="offer-item">
-                    <h3>Special Offer: Guitar + Lessons</h3>
-                    <p>Purchase a guitar and get three free lessons for just R$500.00. Perfect for aspiring musicians.
-                    </p>
+                <p>Follow Us</p>
+                <div class="social-icons">
+
+                    <a href="https://www.facebook.com/hotdog"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://m.me/hotdog"><i class="fab fa-facebook-messenger"></i></a>
+
+                    <a href="https://twitter.com/hotdog"><i class="fab fa-twitter"></i></a>
+
+                    <a href="https://www.instagram.com/hotdog"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://www.linkedin.com/in/hotdog"><i class="fab fa-linkedin"></i></a>
+
+                    <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i></a>
+
+                    <a href="https://t.me/hotdog"><i class="fab fa-telegram"></i></a>
+
+                    <a href="https://open.spotify.com/user/hotdog"><i class="fab fa-spotify"></i></a>
+
+                    <a href="https://www.youtube.com/hotdog"><i class="fab fa-youtube"></i></a>
                 </div>
                 <br>
-                <br>
 
-                <div class="offer-item">
-                    <p>Happy Hour: Buy One, Get Two</p>
-                    <p>Join happy hour every weekday from 5pm to 7pm and take advantage of the buy one, tier two offer
-                        on select items.</p>
+                <div class="footer-item">
+                    <p>Delivery Area</p>
+                    <p>We deliver within a 5 km radius.</p>
                 </div>
-            </section>
+            </div>
+        </footer>
 
-            <section id="faq" class="faq">
-                <p>FAQ (Perguntas Frequentes)</p>
-                <div class="faq-item">
-                    <h3>What are your delivery hours?</h3>
-                    <p>We deliver from 11:00 AM to 10:00 PM, Monday through Sunday.</p>
-                </div>
-                <br>
-                <br>
+        <script>
+            // Adiciona o evento de clique para alternar a classe 'active' no menu e a classe 'open' no botão de alternância do menu
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+                menuToggle.classList.toggle('open');
+            });
 
-                <div class="faq-item">
-                    <p>What is your delivery radius?</p>
-                    <p>We deliver within a 5 km radius from our location.</p>
-                </div>
-                <br>
-                <br>
+            // Adiciona o evento de mouseover para rotacionar o botão de alternância do menu em 90 graus
+            menuToggle.addEventListener('mouseover', function () {
+                menuToggle.style.transform = 'rotate(90deg)';
+            });
 
-                <div class="faq-item">
-                    <p>Do you offer vegetarian options?</p>
-                    <p>Yes, we have a variety of vegetarian options available on our menu.</p>
-                </div>
-                <br>
-                <br>
+            // Adiciona o evento de mouseout para redefinir a rotação do botão de alternância do menu
+            menuToggle.addEventListener('mouseout', function () {
+                menuToggle.style.transform = 'rotate(0deg)';
+            });
+        </script>
 
-                <div class="faq-item">
-                    <p>How can I place an order?</p>
-                    <p>You can place an order by clicking on the "Comprar Agora" button next to each product or by
-                        contacting us via WhatsApp at
-                        <a
-                            href="https://api.whatsapp.com/send?phone=(13) 98143-0940&text=Olá! Gostaria de fazer um pedido.">(13)
-                            98143-0940</a>
-                    </p>
-                </div>
-                <br>
-                <br>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                updateClock();
+                updateDate();
+                setInterval(updateClock, 1000);
+            });
 
-                <div class="faq-item">
-                    <p>Do you cater for events?</p>
-                    <p>Yes, we provide catering services for events. Please contact us to discuss your event and menu
-                        options.</p>
-                </div>
-            </section>
-            <br>
-            <br>
+            function updateClock() {
+                const clockElement = document.getElementById('clock');
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+                clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+            }
 
-            <section id="contact" class="info">
-                <p>Contact Us:</p>
-                <div class="contact-item">
-                    <p>WhatsApp: <a href="tel:(13) 98143-0940">(13) 98143-0940</a></p>
-                </div>
-            </section>
-            <br>
-            <br>
+            function updateDate() {
+                const dateElement = document.getElementById('date');
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const formattedDate = now.toLocaleDateString('pt-BR', options);
+                dateElement.textContent = formattedDate;
+            }
+        </script>
 
-            <footer>
-
-                <div class="footer-content">
-                    <div class="footer-item">
-                        <p>Opening Hours</p>
-                        <p>Monday - Sunday: 11:00 AM - 10:00 PM</p>
-                        <br>
-                    </div>
-
-                    <p>Follow Us</p>
-                    <div class="social-icons">
-
-                        <a href="https://www.facebook.com/hotdog"><i class="fab fa-facebook-f"></i></a>
-
-                        <a href="https://m.me/hotdog"><i class="fab fa-facebook-messenger"></i></a>
-
-                        <a href="https://twitter.com/hotdog"><i class="fab fa-twitter"></i></a>
-
-                        <a href="https://www.instagram.com/hotdog"><i class="fab fa-instagram"></i></a>
-
-                        <a href="https://www.linkedin.com/in/hotdog"><i class="fab fa-linkedin"></i></a>
-
-                        <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i></a>
-
-                        <a href="https://t.me/hotdog"><i class="fab fa-telegram"></i></a>
-
-                        <a href="https://open.spotify.com/user/hotdog"><i class="fab fa-spotify"></i></a>
-
-                        <a href="https://www.youtube.com/hotdog"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <br>
-
-                    <div class="footer-item">
-                        <p>Delivery Area</p>
-                        <p>We deliver within a 5 km radius.</p>
-                    </div>
-                </div>
-            </footer>
-
-            <script>
-                // Adiciona o evento de clique para alternar a classe 'active' no menu e a classe 'open' no botão de alternância do menu
-                menuToggle.addEventListener('click', function () {
-                    navMenu.classList.toggle('active');
-                    menuToggle.classList.toggle('open');
-                });
-
-                // Adiciona o evento de mouseover para rotacionar o botão de alternância do menu em 90 graus
-                menuToggle.addEventListener('mouseover', function () {
-                    menuToggle.style.transform = 'rotate(90deg)';
-                });
-
-                // Adiciona o evento de mouseout para redefinir a rotação do botão de alternância do menu
-                menuToggle.addEventListener('mouseout', function () {
-                    menuToggle.style.transform = 'rotate(0deg)';
-                });
-            </script>
-
-            <footer>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 Sua Empresa. Todos os direitos reservados</p>
-                </div>
-            </footer>
+        <footer>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sua Empresa. Todos os direitos reservados</p>
+            </div>
+        </footer>
 
 </body>
 
